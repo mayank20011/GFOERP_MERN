@@ -10,29 +10,29 @@ const PurchaseSchema=new mongoose.Schema(
      },
     quantity:
     {
-      type:Number,
+      type:String,
       required:[true, 'Enter The Quantity of milk you are offering']
     },
     fat:
     {
-      type:Number,
+      type:String,
       required:[true, "Enter the Fat % in your milk"],
     },
     clr:
     {
-      type:Number,
+      type:String,
       required:[true, "Enter the CLR of your milk"],
     },
     alchol:{
-      type:Number,
+      type:String,
       required:[true,"Enter Alchol Percent"],
     },
     acidity:{
-      type:Number,
+      type:String,
       required:[true,"Enter Acidity Percent"],
     },
     adulteration:{
-      type:Number,
+      type:String,
       required:[true,"Enter Adulteration Value"],
     },
     timeStamp:{
@@ -40,7 +40,7 @@ const PurchaseSchema=new mongoose.Schema(
       required:[true,"Enter the TimeStamp"],
     },
     whatToDo:{
-      type:Boolean,
+      type:String,
       required:[true,"Please Tell What to do with this Batch, Accept or Reject"],
     }
   }
