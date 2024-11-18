@@ -38,7 +38,7 @@ function Sale() {
         quantity[key] = value;
       }
     });
-    data[`quantity`]=quantity;
+    data[`Quantity`]=quantity;
     console.log(data);
     const reqUrl = "https://gfoerp-mern-api.vercel.app/Sales/";
 
