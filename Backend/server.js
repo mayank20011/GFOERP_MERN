@@ -20,6 +20,7 @@ server.get("/",(req,res)=>
   {
     res.send('Server Running Perfectly Fine');
   })
+  
 // applying middleware
 server.use(express.json());
 server.use('/Sales',salesRouter);
