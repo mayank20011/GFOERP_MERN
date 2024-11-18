@@ -15,6 +15,11 @@ const PORT=process.env.PORT || 5000;
 // initializing server
 const server=express();
 
+// for testing server
+server.get("/",(req,res)=>
+  {
+    res.send('Server Running Perfectly Fine');
+  })
 // applying middleware
 server.use(express.json());
 server.use('/GFOERP/Sales',salesRouter);
