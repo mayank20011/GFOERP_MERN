@@ -7,6 +7,9 @@ import ProductRouter from "./Routes/Products.js";
 import "./config/db.js";
 import cors from "cors";
 
+// initializing server
+const server = express();
+
 // resolving cors error
 server.use(
   cors({
@@ -21,9 +24,6 @@ dotenv.config({ path: "./config/config.env" });
 
 // Accessing port from the config File
 const PORT = process.env.PORT || 5000;
-
-// initializing server
-const server = express();
 
 // for testing server
 server.get("/", (req, res) => {
