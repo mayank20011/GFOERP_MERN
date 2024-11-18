@@ -25,14 +25,22 @@ function Sale() {
   function submitSalesData(e) {
     e.preventDefault();
     const formData = new FormData(e.target);
-    const data = {};
+    let data = {};
+    let quantity = {};
     formData.forEach((value, key) => {
-      data[key] = value;
+      if (
+        key == "dateOfDispatchAndTime" ||
+        key == "dateOfOrder" ||
+        key == "clientName"
+      ) {
+        data[key] = value;
+      } else {
+        quantity[key] = value;
+      }
     });
-
+    data[`quantity`]=quantity;
     console.log(data);
-    const reqUrl =
-      "https://gfoerp-mern-api.vercel.app/Sales/";
+    const reqUrl = "https://gfoerp-mern-api.vercel.app/Sales/";
 
     axios
       .post(reqUrl, data)
