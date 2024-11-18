@@ -5,6 +5,7 @@ import salesRouter from "./Routes/Sales.js";
 import purchaseRouter from "./Routes/Purchase.js";
 import ProductRouter from "./Routes/Products.js";
 import './config/db.js';
+import cors from "cors";
 
 // where to look config file
 dotenv.config({path: './config/config.env'});
@@ -20,13 +21,14 @@ server.get("/",(req,res)=>
   {
     res.send('Server Running Perfectly Fine');
   })
-  
+
 // applying middleware
 server.use(express.json());
 server.use('/Sales',salesRouter);
 server.use('/Purchase',purchaseRouter);
 server.use('/Client',clientRouter);
 server.use('/Products',ProductRouter);
+server.use(cors())
 
 server.listen(PORT,()=>
   {
