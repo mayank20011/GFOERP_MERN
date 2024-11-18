@@ -22,10 +22,10 @@ server.get("/",(req,res)=>
   })
 // applying middleware
 server.use(express.json());
-server.use('/GFOERP/Sales',salesRouter);
-server.use('/GFOERP/Purchase',purchaseRouter);
-server.use('/GFOERP/Client',clientRouter);
-server.use('/GFOERP/Products',ProductRouter);
+server.use('/Sales',salesRouter);
+server.use('/Purchase',purchaseRouter);
+server.use('/Client',clientRouter);
+server.use('/Products',ProductRouter);
 
 server.listen(PORT,()=>
   {
