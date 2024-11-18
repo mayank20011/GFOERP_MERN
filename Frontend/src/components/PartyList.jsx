@@ -3,8 +3,8 @@ import React from "react";
 function PartyList() {
   return (
     <div className="grid gap-2">
-      <label htmlFor="Quantity">Party/Client:</label>
-      <select id="names" name="names" className="border-2 h-10 rounded-md px-2">
+      <label htmlFor="clientName">Party/Client:</label>
+      <select id="names" name="clientName" className="border-2 h-10 rounded-md px-2">
         <option value="john">John</option> <option value="jane">Jane</option>{" "}
         <option value="michael">Michael</option>{" "}
         <option value="emily">Emily</option>{" "}
