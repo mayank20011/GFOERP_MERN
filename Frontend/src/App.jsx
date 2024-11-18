@@ -43,8 +43,7 @@ function App() {
       </form>
 
     //   {psselect == "purchase" ? <Purchase /> : <Sale />}
-
-    // </div>
+   </div>
   );
 }
 
