@@ -20,39 +20,33 @@ function Sale() {
     "Masala Chach (300 ml)",
   ];
 
-  const submitSalesData = async (e) => {
+  function submitSalesData(e) {
     e.preventDefault();
     const formData = new FormData(e.target);
     const data = {};
     formData.forEach((value, key) => {
       data[key] = value;
     });
-  
+
     console.log(data);
-    const scriptURL =
-      "https://script.google.com/macros/s/AKfycbzk2A-A8Dy3JLInqxl1Wy1XlOjJIQexgdVkLr76RhU89IbMEDLVKjLHbhIQq7QJBHVi/exec"; 
-      // your Google Apps Script URL
-  
-    try {
-      const response = await fetch(scriptURL, {
-        method: "POST",
-        headers: {
-          "Content-Type": "text/plain",  // Send JSON content
-        },
-        body: JSON.stringify(data),
+    const reqUrl =
+      "https://gfoerp-mern-api.vercel.app/Sales/";
+
+    axios
+      .post(reqUrl, data)
+      .then((response) => {
+        if (response.status >= 200 && response.status < 300) {
+          // If the status code is in the success range (200-299), the request was successful
+          console.log("Request successful:", response.data);
+          alert(`Data Saved Successfully in db`);
+        }
+      })
+      .catch((error) => {
+        // Handle errors (non-2xx status codes or network errors)
+        console.error("Request failed:", error.response || error.message);
+        alert(`Failure:${error}`);
       });
-  
-      const result = await response.json();
-      if (result.status === "success") {
-        alert("Data submitted successfully!");
-      } else {
-        alert("Failed to submit data");
-      }
-    } catch (error) {
-      console.error("Error:", error);
-      alert("An error occurred");
-    }
-  };
+  }
 
   return (
     <form
@@ -62,22 +56,22 @@ function Sale() {
       <PartyList />
 
       <div className="grid gap-2">
-        <label htmlFor="Date of order">Date of Order:</label>
+        <label htmlFor="dateOfOrder">Date of Order:</label>
         <input
           type="date"
           className="border-2 h-10 rounded-md px-3"
-          name="Date of order"
+          name="dateOfOrder"
         />
       </div>
 
       <div className="grid gap-2">
-        <label htmlFor="Date of dispatch and time">
+        <label htmlFor="dateOfDispatchAndTime">
           Date of Dispatch and Time:
         </label>
         <input
           type="datetime-local"
           className="border-2 h-10 rounded-md px-3"
-          name="Date of dispatch and time"
+          name="dateOfDispatchAndTime"
         />
       </div>
 

@@ -15,12 +15,12 @@ function Purchase() {
       "https://gfoerp-mern-api.vercel.app/Purchase/";
 
     axios
-      .post(reqUrl, data)
+      .post(req, data)
       .then((response) => {
         if (response.status >= 200 && response.status < 300) {
           // If the status code is in the success range (200-299), the request was successful
           console.log("Request successful:", response.data);
-          alert(`Success:${response.data}`);
+          alert(`Data Saved Successfully in db`);
         }
       })
       .catch((error) => {
