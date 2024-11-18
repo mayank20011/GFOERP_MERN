@@ -11,14 +11,11 @@ function Purchase() {
     });
 
     console.log(data);
-    const scriptURL =
-      "https://script.google.com/macros/s/AKfycbwbv3jC4xt5SGEsb4HZycAd4_gnMyDuejEC7rrmr9UFFhrBbWthO1y6ER2q3-Bo5gph/exec";
+    const reqUrl =
+      "https://gfoerp-mern-api.vercel.app/Purchase/";
 
     axios
-      .post(scriptURL, data,{
-        headers: {
-          'Content-Type': 'text/plain',  // Set the correct content type
-        }})
+      .post(scriptURL, data)
       .then((response) => {
         if (response.status >= 200 && response.status < 300) {
           // If the status code is in the success range (200-299), the request was successful
@@ -33,54 +30,19 @@ function Purchase() {
       });
   }
 
-  // const submitPurchaseData = async (e) => {
-  //   e.preventDefault();
-  //   const formData = new FormData(e.target);
-  //   const data = {};
-  //   formData.forEach((value, key) => {
-  //     data[key] = value;
-  //   });
-
-  //   console.log(data);
-  //   const scriptURL =
-  //     "https://script.google.com/macros/s/AKfycbwi19-uetAEHe1a1uMXBxKCPk9NJ7EAI4iaMXvzvyV4B1ncHIl2uLyVj4O5jJqq21M-/exec";
-  //     // your Google Apps Script URL
-
-  //   try {
-  //     const response = await fetch(scriptURL, {
-  //       method: "POST",
-  //       headers: {
-  //         "Content-Type": "application/json",  // Send JSON content
-  //       },
-  //       // body: JSON.stringify(data),
-  //       body: data,
-  //     });
-
-  //     const result = await response.json();
-  //     if (result.status === "success") {
-  //       alert("Data submitted successfully!");
-  //     } else {
-  //       alert("Failed to submit data");
-  //     }
-  //   } catch (error) {
-  //     console.error("Error:", error);
-  //     alert("An error occurred");
-  //   }
-  // };
-
   return (
     <form
       className="w-4/5 mx-auto md:w-1/2 grid gap-4 mb-4"
       onSubmit={submitPurchaseData}
     >
-      <PartyList />
+      <PartyList/>
 
       <div className="grid gap-2">
         <label htmlFor="Quantity">Quantity (LTr) :</label>
         <input
           type="text"
           className="border-2 h-10 rounded-md px-3"
-          name="Quantity"
+          name="quantity"
         />
       </div>
 
@@ -89,34 +51,34 @@ function Purchase() {
         <input
           type="text"
           className="border-2 h-10 rounded-md px-3"
-          name="FAT"
+          name="fat"
         />
       </div>
 
       <div className="grid gap-2">
-        <label htmlFor="CLR">CLR :</label>
+        <label htmlFor="clr">CLR :</label>
         <input
           type="text"
           className="border-2 h-10 rounded-md px-3"
-          name="CLR"
+          name="clr"
         />
       </div>
 
       <div className="grid gap-2">
-        <label htmlFor="Alchol">Alchol (%) :</label>
+        <label htmlFor="alchol">Alchol (%) :</label>
         <input
           type="text"
           className="border-2 h-10 rounded-md px-3"
-          name="Alchol"
+          name="alchol"
         />
       </div>
 
       <div className="grid gap-2">
-        <label htmlFor="Acid">Acid :</label>
+        <label htmlFor="acidity">Acid :</label>
         <input
           type="text"
           className="border-2 h-10 rounded-md px-3"
-          name="Acid"
+          name="acidity"
         />
       </div>
 
@@ -124,22 +86,22 @@ function Purchase() {
         <h1>Adulteration:</h1>
         <div className="flex gap-4">
           <label>
-            <input type="radio" name="Adulteration" value="Yes" />
+            <input type="radio" name="adulteration" value="Yes" />
             Yes
           </label>
           <label>
-            <input type="radio" name="Adulteration" value="No" />
+            <input type="radio" name="adulteration" value="No" />
             No
           </label>
         </div>
       </div>
 
       <div className="grid gap-2">
-        <label htmlFor="Timestamp">TimeStamp :</label>
+        <label htmlFor="timeStamp">TimeStamp :</label>
         <input
           type="date"
           className="border-2 h-10 rounded-md px-3"
-          name="Timestamp"
+          name="timeStamp"
         />
       </div>
 
@@ -147,11 +109,11 @@ function Purchase() {
         <h1>What to do?:</h1>
         <div className="flex gap-4">
           <label>
-            <input type="radio" name="What to do?" value="Accept" />
+            <input type="radio" name="whatToDo" value="Accept" />
             Accept
           </label>
           <label>
-            <input type="radio" name="What to do?" value="Reject" />
+            <input type="radio" name="whatToDo" value="Reject" />
             Reject
           </label>
         </div>
