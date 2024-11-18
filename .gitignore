@@ -1,5 +1,4 @@
-/Backend/node_modules
+/Backendd/node_modules
 /Frontend/node_modules
-/Backend/config/config.env
+/Backendd/config/config.env
 /Test/test.json
-/Backend
