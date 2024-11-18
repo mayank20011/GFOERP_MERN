@@ -9,14 +9,12 @@ function App() {
     setpsselect("purchase");
   }
 
-  function addSale()
-  {
+  function addSale() {
     setpsselect("sale");
   }
 
   return (
     <div className="container grid gap-4 my-4">
-
       <h1 className="text-center text-4xl">GFO ERP</h1>
 
       <form action="" className="w-100 ">
@@ -42,8 +40,8 @@ function App() {
         </div>
       </form>
 
-    //   {psselect == "purchase" ? <Purchase /> : <Sale />}
-   </div>
+      {psselect == "purchase" ? <Purchase /> : <Sale />}
+    </div>
   );
 }
 
