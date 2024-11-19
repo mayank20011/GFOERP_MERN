@@ -13,7 +13,10 @@ const server = express();
 // resolving cors error
 server.use(
   cors({
-    origin: ["https://gfoerp-mern-frontend.vercel.app","https://gfoerp-dashboard.vercel.app/"],
+    origin: [
+      "https://gfoerp-mern-frontend.vercel.app",
+      "https://gfoerp-dashboard.vercel.app",
+    ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
   })
