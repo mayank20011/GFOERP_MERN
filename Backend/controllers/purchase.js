@@ -61,6 +61,29 @@ export function savePurchase(req,res,next)
         }
     });
 }
+
+export function getDataByFilter(req,res,next)
+{
+   Purchase.find(req.body)
+   .then((data)=>
+    {
+      res.status(201).json({
+        success:true,
+        count:data.length,
+        data:data,
+      })
+    })
+   .catch((err)=>
+    {
+      console.log(err);
+      res.status(500).json({
+        success:false,
+        error:`Server Problem`
+      })
+    })
+}
+
+
 export function updateSpecificPurchase(req,res,next)
 {
   console.log('updateSpecificPurchase');

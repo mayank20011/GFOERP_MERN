@@ -60,6 +60,24 @@ export function saveSaledata(req,res,next)
     });
 }
 
+export function getDataByFilter(req,res,next)
+{
+  Sales.find(req.body)
+  .then((data)=>{
+      res.status(201).json({
+        success:true,
+        count:data.length,
+        data:data
+      })
+  })
+  .catch( (err) =>
+    {
+      res.status(500).json({
+        success:false,
+        error:`Server Error`
+      })
+    })
+}
 export function updateSpecificSaleData(req,res,next)
 {
   console.log('updateSpecificSaleData');

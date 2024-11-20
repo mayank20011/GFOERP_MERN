@@ -1,5 +1,5 @@
 import express from "express";
-import { getAllPurchase, updateSpecificPurchase, deleteSpecificPurchase, savePurchase } from "../controllers/purchase.js";
+import { getAllPurchase, updateSpecificPurchase, deleteSpecificPurchase, savePurchase, getDataByFilter } from "../controllers/purchase.js";
 const router = express.Router();
 
 router.route("/")
@@ -11,5 +11,7 @@ router.route("/:id")
 
 router.route("/:id")
 .delete(deleteSpecificPurchase);
+
+router.route("/getDataByFilter").get(getDataByFilter);
 
 export default router;
