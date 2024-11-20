@@ -62,7 +62,8 @@ export function saveSaledata(req,res,next)
 
 export function getDataByFilter(req,res,next)
 {
-  Sales.find(req.body)
+  const dataToFind=JSON.parse(req.query.data);
+  Sales.find(dataToFind)
   .then((data)=>{
       res.status(201).json({
         success:true,

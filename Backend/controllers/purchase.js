@@ -64,7 +64,8 @@ export function savePurchase(req,res,next)
 
 export function getDataByFilter(req,res,next)
 {
-   Purchase.find(req.body)
+  const dataToFind=JSON.parse(req.query.data);
+   Purchase.find(dataToFind)
    .then((data)=>
     {
       res.status(201).json({
