@@ -21,7 +21,7 @@ const quantitySchema = new mongoose.Schema({
   "DTM (400 ml)": { 
     type: String, default: "0" 
   },
-  "DTM Bacha(170 ml)": { 
+  "DTM Bacha (170 ml)": { 
     type: String, default: "0" 
   },
   "Family Pack (450 ml)": { 
