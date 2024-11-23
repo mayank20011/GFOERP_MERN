@@ -17,6 +17,7 @@ server.use(
       "https://gfoerp-mern-frontend.vercel.app",
       "https://gfoerp-dashboard.vercel.app",
       "http://localhost:5173",
+      "https://gfoerp-form-v2-gzc4.vercel.app"
     ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
