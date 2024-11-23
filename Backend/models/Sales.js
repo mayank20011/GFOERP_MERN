@@ -9,7 +9,7 @@ const quantitySchema = new mongoose.Schema({
     type: String,
     default: "0",
   },
-  "TONED Milk (500ML)": { 
+  "TONED Milk (500 mL)": { 
     type: String, default: "0" 
   },
   "TONED Milk (400 ml)": { 
